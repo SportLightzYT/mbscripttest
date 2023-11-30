@@ -1,16 +1,4 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Hirimii/f4ckyou/main/cclua')))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Crazzy Hub [LITE]",
-	Text = "Loading...",
-	Icon = "rbxassetid://15377112527"
-})
-wait(3)
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Crazzy Hub [LITE]" ,
-	Text = " ✅ Loading Complete!",
-	Icon = "rbxassetid://15377112527"
-})
-wait(1)
 ---------------------------------------------------------------------------------------------------------------Function
 if game.PlaceId == 2753915549 then
     World1 = true

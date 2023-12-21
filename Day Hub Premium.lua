@@ -13,7 +13,6 @@ local Window = Fluent:CreateWindow({
 })
 local Tabs = {
     Main = Window:AddTab({ Title = "Main Farm", Icon = "home" }),
-	ItemsFarm = Window:AddTab({ Title = "Items Farm", Icon = "sword" }),
     Setting = Window:AddTab({ Title = "Setting Farming", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
     Player = Window:AddTab({ Title = "Player", Icon = "baby" }),

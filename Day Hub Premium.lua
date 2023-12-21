@@ -19,6 +19,8 @@ local Tabs = {
     Teleport = Window:AddTab({ Title = "Travel", Icon = "palmtree" }),
     Fruit = Window:AddTab({ Title = "Devil Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "Raid", Icon = "swords" }),
+	SeaEvent = Window:AddTab({ Title = "Sea Event", Icon = "sea" }),
+	Mirage = Window:AddTab({ Title = "Mirage Island", Icon = "chevrons-right" }),
     Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
     Shop = Window:AddTab({ Title = "Buy Items", Icon = "shopping-cart" }),
 	Misc = Window:AddTab({ Title = "Miscellaneous", Icon = "list-plus" }),
@@ -5241,6 +5243,8 @@ end)
 
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+--SeaEvent
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Raid
@@ -5605,6 +5609,8 @@ spawn(function()
         end
     end)
 end)
+--------------------------------------------------------------------------------------------------------------------------------------------
+--Mirage
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --RaceV4
@@ -6181,36 +6187,6 @@ Tabs.Misc:AddButton({
         game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
 	end
 })
-
-
-
-local Mastery = Tabs.Misc:AddSection("Trolling")
-
-
-
-Tabs.Misc:AddButton({
-	Title = "Rain Fruit",
-	Description = "Rain fruit (Fake)",
-	Callback = function()
-        for i, v in pairs(game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()) do
-            v.Parent = game.Workspace.Map
-            v:MoveTo(game.Players.LocalPlayer.Character.PrimaryPart.Position + Vector3.new(math.random(-50, 50), 100, math.random(-50, 50)))
-            if v.Fruit:FindFirstChild("AnimationController") then
-                v.Fruit:FindFirstChild("AnimationController"):LoadAnimation(v.Fruit:FindFirstChild("Idle")):Play()
-            end
-            v.Handle.Touched:Connect(function(otherPart)
-                if otherPart.Parent == game.Players.LocalPlayer.Character then
-                    v.Parent = game.Players.LocalPlayer.Backpack
-                    game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-                end
-            end)
-        end
-	end
-})
-
-
-
-
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Hop
 

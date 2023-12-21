@@ -9,7 +9,7 @@ local Window = Fluent:CreateWindow({
     Size = UDim2.fromOffset(530, 350),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
-    MinimizeKey = Enum.KeyCode.Rightcontrol -- Used when theres no MinimizeKeybind
+    MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
 local Tabs = {
     Main = Window:AddTab({ Title = "Main Farm", Icon = "home" }),

@@ -5861,9 +5861,8 @@ ToggleRandomBone:OnChanged(function(Value)
 		_G.AutoRandomBone = Value
 end)
 Options.ToggleRandomBone:SetValue(false)
-	
 spawn(function()
-	while wait(0.0000000000000000000000000000000000000000000000000001) do
+	while wait(0.1) do
 	if _G.AutoRandomBone then
 	local args = {
 	 [1] = "Bones",
@@ -5874,9 +5873,48 @@ spawn(function()
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 	end
 	end
-	end)
-
-
+end)
+if Second_Sea or Third_Sea then
+    local ToggleHakiColor = Tabs.Shop:AddToggle("ToggleHakiColor", {Title = "Auto Buy Haki Color",Default = false })
+    ToggleHakiColor:OnChanged(function(Value)
+        _G.Auto_Buy_Enchancement = Value
+    end)
+        Options.ToggleHakiColor:SetValue(false)
+    spawn(function()
+            while wait() do
+                if _G.Auto_Buy_Enchancement then
+                    local args = {
+                        [1] = "ColorsDealer",
+                        [2] = "2"
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+                end 
+            end
+        end)
+end
+if Second_Sea then
+    local ToggleSwordLengend = Tabs.Shop:AddToggle("ToggleSwordLengend", {Title = "Auto Buy Sword Lengendary",Default = false })
+    ToggleSwordLengend:OnChanged(function(Value)
+        _G.BuyLengendSword = Value
+    end)
+        Options.ToggleSwordLengend:SetValue(false)
+        spawn(function()
+            while wait(.1) do
+                pcall(function()
+                    if _G.BuyLengendSword or Triple_A then
+                        local args = {
+                            [1] = "LegendarySwordDealer",
+                            [2] = "2"
+                        }
+                        -- Triple_A
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+                    else
+                        wait(2)
+                    end
+                end)
+            end
+        end)
+    end
 Tabs.Shop:AddButton({
 	Title = "Geppo",
 	Description = "",
@@ -6140,36 +6178,6 @@ Tabs.Misc:AddButton({
         game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
 	end
 })
-
-
-
-local Mastery = Tabs.Misc:AddSection("Trolling")
-
-
-
-Tabs.Misc:AddButton({
-	Title = "Rain Fruit",
-	Description = "Rain fruit (Fake)",
-	Callback = function()
-        for i, v in pairs(game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()) do
-            v.Parent = game.Workspace.Map
-            v:MoveTo(game.Players.LocalPlayer.Character.PrimaryPart.Position + Vector3.new(math.random(-50, 50), 100, math.random(-50, 50)))
-            if v.Fruit:FindFirstChild("AnimationController") then
-                v.Fruit:FindFirstChild("AnimationController"):LoadAnimation(v.Fruit:FindFirstChild("Idle")):Play()
-            end
-            v.Handle.Touched:Connect(function(otherPart)
-                if otherPart.Parent == game.Players.LocalPlayer.Character then
-                    v.Parent = game.Players.LocalPlayer.Backpack
-                    game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-                end
-            end)
-        end
-	end
-})
-
-
-
-
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Hop
 

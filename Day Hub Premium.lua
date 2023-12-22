@@ -48,37 +48,6 @@ function AntiBan()
     end
     AntiBan()
 --------------------------------------------------------------------------------------------------------------------------------------------
-repeat
-    pcall(function()
-            task.wait()
-            if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main"):FindFirstChild("ChooseTeam") then
-                if string.find(tostring(_G.Team), "Pirate") then
-                    for r, v in pairs(
-                        getconnections(
-                            game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.TextButton.Activated
-                        )
-                    ) do
-                        v.Function()
-                    end
-                elseif string.find(tostring(_G.Team), "Marine") then
-                    for r, v in pairs(
-                        getconnections(
-                            game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.TextButton.Activated
-                        )
-                    ) do
-                        v.Function()
-                    end
-                else
-                    for r, v in pairs(
-                        getconnections(
-                            game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.TextButton.Activated
-                        )
-                    ) do
-                        v.Function()
-                    end
-                end
-            end
-        end)
 ------// BLOX FRUIT
 --// Sea world
 First_Sea = false

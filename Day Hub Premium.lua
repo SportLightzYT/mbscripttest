@@ -48,39 +48,37 @@ function AntiBan()
     end
     AntiBan()
 --------------------------------------------------------------------------------------------------------------------------------------------
-    repeat wait() until game.Players
-    repeat wait() until game.Players.LocalPlayer
-    repeat wait() until game.ReplicatedStorage
-    repeat wait() until game.ReplicatedStorage:FindFirstChild("Remotes");
-    repeat wait() until game.Players.LocalPlayer:FindFirstChild("PlayerGui");
-    repeat wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("Main");
-    repeat wait() until game:GetService("Players")
-    repeat wait() until game:GetService("Players").LocalPlayer.Character:FindFirstChild("Energy")
-    
-    wait(0.1)
-    
-    if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
-    
-    if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
-        repeat wait()
-            if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main").ChooseTeam.Visible == true then
-                if _G.Team == "Pirate" then
-                    for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do                                                                                                
+repeat
+    pcall(function()
+            task.wait()
+            if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main"):FindFirstChild("ChooseTeam") then
+                if string.find(tostring(_G.Team), "Pirate") then
+                    for r, v in pairs(
+                        getconnections(
+                            game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.TextButton.Activated
+                        )
+                    ) do
                         v.Function()
                     end
-                elseif _G.Team == "Marine" then
-                    for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton.Activated)) do                                                                                                
+                elseif string.find(tostring(_G.Team), "Marine") then
+                    for r, v in pairs(
+                        getconnections(
+                            game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.TextButton.Activated
+                        )
+                    ) do
                         v.Function()
                     end
                 else
-                    for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do                                                                                                
+                    for r, v in pairs(
+                        getconnections(
+                            game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.TextButton.Activated
+                        )
+                    ) do
                         v.Function()
                     end
                 end
             end
-        until game.Players.LocalPlayer.Team ~= nil and game:IsLoaded()
-    end
-	
+        end)
 ------// BLOX FRUIT
 --// Sea world
 First_Sea = false

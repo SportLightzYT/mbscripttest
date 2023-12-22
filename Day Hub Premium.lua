@@ -5130,7 +5130,7 @@ spawn(function()
 end
 end)
 
-local Mastery = Tabs.Fruit:AddSection("Esp")
+local Mastery = Tabs.Fruit:AddSection("ESP")
 
 
 local ToggleEspPlayer = Tabs.Fruit:AddToggle("ToggleEspPlayer", {Title = "Esp Player", Default = false })
@@ -5174,6 +5174,21 @@ ToggleEspFlower:OnChanged(function(Value)
 end)
 Options.ToggleEspFlower:SetValue(false)
 
+local ToggleEspMirageIsland = Tabs.Fruit:AddToggle("ToggleEspMirageIsland", {Title = "Esp MirageIsland", Default = false })
+
+ToggleEspMirageIsland:OnChanged(function(Value)
+    MirageIslandESP = Value
+	UpdateIslandMirageESP()
+end)
+Options.ToggleEspMirageIsland:SetValue(false)
+
+local ToggleEspafd = Tabs.Fruit:AddToggle("ToggleEspafd", {Title = "Esp Advanced Fruit Dealer", Default = false })
+
+ToggleEspafd:OnChanged(function(Value)
+    AfdESP = Value
+	UpdateAfdESP()
+end)
+Options.ToggleEspafd:SetValue(false)
 
 spawn(function()
     while wait(2) do
@@ -5192,6 +5207,12 @@ spawn(function()
         if RealFruitESP then
             UpdateRealFruitChams()
         end
+		if MirageIslandESP then
+		UpdateIslandMirageESP()
+		end
+		if AfdESP then
+		UpdateAfdESP()
+		end
     end
 end)
 
@@ -5564,7 +5585,8 @@ spawn(function()
         end
     end)
 end)
-
+--------------------------------------------------------------------------------------------------------------------------------------------
+--MirageIsland
 --------------------------------------------------------------------------------------------------------------------------------------------
 --RaceV4
 

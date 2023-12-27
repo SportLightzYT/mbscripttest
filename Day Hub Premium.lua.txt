@@ -5064,7 +5064,7 @@ ToggleEspFlower:OnChanged(function(Value)
 end)
 Options.ToggleEspFlower:SetValue(false)
 
-local ToggleEspmisland = Tabs.Fruit:AddToggle("ToggleEspmislans", {Title = "ESP Mirage Island", Default = false })
+local ToggleEspmisland = Tabs.Fruit:AddToggle("ToggleEspmisland", {Title = "ESP Mirage Island", Default = false })
 
 ToggleEspmisland:OnChanged(function(Value)
     MirageIslandESP = Value

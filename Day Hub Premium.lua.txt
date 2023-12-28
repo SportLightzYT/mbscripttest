@@ -1689,90 +1689,6 @@ while wait() do
 end
 end)
 
-spawn(function()
-while wait() do
-    pcall(function()
-        if SeaESP then
-            for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
-                if v:FindFirstChild('HumanoidRootPart') then
-                    if not v:FindFirstChild("Seaesps") then
-                        local BillboardGui = Instance.new("BillboardGui")
-                        local TextLabel = Instance.new("TextLabel")
-
-                        BillboardGui.Parent = v
-                        BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-                        BillboardGui.Active = true
-                        BillboardGui.Name = "Seaesps"
-                        BillboardGui.AlwaysOnTop = true
-                        BillboardGui.LightInfluence = 1.000
-                        BillboardGui.Size = UDim2.new(0, 200, 0, 50)
-                        BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
-
-                        TextLabel.Parent = BillboardGui
-                        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                        TextLabel.BackgroundTransparency = 1.000
-                        TextLabel.Size = UDim2.new(0, 200, 0, 50)
-                        TextLabel.Font = Enum.Font.GothamBold
-                        TextLabel.TextColor3 = Color3.fromRGB(7, 236, 240)
-                        TextLabel.Text.Size = 35
-                    end
-                    local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude)
-                    v.Seaesps.TextLabel.Text = v.Name.." - "..Dis.." Distance"
-                end
-            end
-        else
-            for i,v in pairs (game:GetService("Workspace").SeaBeasts:GetChildren()) do
-                if v:FindFirstChild("Seaesps") then
-                    v.Seaesps:Destroy()
-                end
-            end
-        end
-    end)
-end
-end)
-
-spawn(function()
-while wait() do
-    pcall(function()
-        if NpcESP then
-            for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
-                if v:FindFirstChild('HumanoidRootPart') then
-                    if not v:FindFirstChild("NpcEspes") then
-                        local BillboardGui = Instance.new("BillboardGui")
-                        local TextLabel = Instance.new("TextLabel")
-
-                        BillboardGui.Parent = v
-                        BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-                        BillboardGui.Active = true
-                        BillboardGui.Name = "NpcEspes"
-                        BillboardGui.AlwaysOnTop = true
-                        BillboardGui.LightInfluence = 1.000
-                        BillboardGui.Size = UDim2.new(0, 200, 0, 50)
-                        BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
-
-                        TextLabel.Parent = BillboardGui
-                        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                        TextLabel.BackgroundTransparency = 1.000
-                        TextLabel.Size = UDim2.new(0, 200, 0, 50)
-                        TextLabel.Font = Enum.Font.GothamBold
-                        TextLabel.TextColor3 = Color3.fromRGB(7, 236, 240)
-                        TextLabel.Text.Size = 35
-                    end
-                    local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude)
-                    v.NpcEspes.TextLabel.Text = v.Name.." - "..Dis.." Distance"
-                end
-            end
-        else
-            for i,v in pairs (game:GetService("Workspace").NPCs:GetChildren()) do
-                if v:FindFirstChild("NpcEspes") then
-                    v.NpcEspes:Destroy()
-                end
-            end
-        end
-    end)
-end
-end)
-
 function isnil(thing)
 return (thing == nil)
 end
@@ -1828,108 +1744,6 @@ for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
     pcall(function()
         if AfdESP then 
             if v.Name == "Advanced Fruit Dealer" then
-                if not v:FindFirstChild('NameEsp') then
-                    local bill = Instance.new('BillboardGui',v)
-                    bill.Name = 'NameEsp'
-                    bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                    bill.Size = UDim2.new(1,200,1,30)
-                    bill.Adornee = v
-                    bill.AlwaysOnTop = true
-                    local name = Instance.new('TextLabel',bill)
-                    name.Font = "Code"
-                    name.FontSize = "Size14"
-                    name.TextWrapped = true
-                    name.Size = UDim2.new(1,0,1,0)
-                    name.TextYAlignment = 'Top'
-                    name.BackgroundTransparency = 1
-                    name.TextStrokeTransparency = 0.5
-                    name.TextColor3 = Color3.fromRGB(80, 245, 245)
-                else
-                    v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                end
-            end
-        else
-            if v:FindFirstChild('NameEsp') then
-                v:FindFirstChild('NameEsp'):Destroy()
-            end
-        end
-    end)
-end
-end
-
-function UpdateAuraESP() 
-for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
-    pcall(function()
-        if AuraESP then 
-            if v.Name == "Master of Enhancement" then
-                if not v:FindFirstChild('NameEsp') then
-                    local bill = Instance.new('BillboardGui',v)
-                    bill.Name = 'NameEsp'
-                    bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                    bill.Size = UDim2.new(1,200,1,30)
-                    bill.Adornee = v
-                    bill.AlwaysOnTop = true
-                    local name = Instance.new('TextLabel',bill)
-                    name.Font = "Code"
-                    name.FontSize = "Size14"
-                    name.TextWrapped = true
-                    name.Size = UDim2.new(1,0,1,0)
-                    name.TextYAlignment = 'Top'
-                    name.BackgroundTransparency = 1
-                    name.TextStrokeTransparency = 0.5
-                    name.TextColor3 = Color3.fromRGB(80, 245, 245)
-                else
-                    v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                end
-            end
-        else
-            if v:FindFirstChild('NameEsp') then
-                v:FindFirstChild('NameEsp'):Destroy()
-            end
-        end
-    end)
-end
-end
-
-function UpdateLSDESP() 
-for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
-    pcall(function()
-        if LADESP then 
-            if v.Name == "Legendary Sword Dealer" then
-                if not v:FindFirstChild('NameEsp') then
-                    local bill = Instance.new('BillboardGui',v)
-                    bill.Name = 'NameEsp'
-                    bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                    bill.Size = UDim2.new(1,200,1,30)
-                    bill.Adornee = v
-                    bill.AlwaysOnTop = true
-                    local name = Instance.new('TextLabel',bill)
-                    name.Font = "Code"
-                    name.FontSize = "Size14"
-                    name.TextWrapped = true
-                    name.Size = UDim2.new(1,0,1,0)
-                    name.TextYAlignment = 'Top'
-                    name.BackgroundTransparency = 1
-                    name.TextStrokeTransparency = 0.5
-                    name.TextColor3 = Color3.fromRGB(80, 245, 245)
-                else
-                    v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                end
-            end
-        else
-            if v:FindFirstChild('NameEsp') then
-                v:FindFirstChild('NameEsp'):Destroy()
-            end
-        end
-    end)
-end
-end
-
-function UpdateGearESP() 
-for i,v in pairs(game:GetService("Workspace").Map.MysticIsland:GetChildren()) do 
-    pcall(function()
-        if GearESP then 
-            if v.Name == "MeshPart" then
                 if not v:FindFirstChild('NameEsp') then
                     local bill = Instance.new('BillboardGui',v)
                     bill.Name = 'NameEsp'
@@ -5088,55 +4902,6 @@ ToggleEspmob:OnChanged(function(Value)
     MobESP = Value
 end)
 Options.ToggleEspmob:SetValue(false)
-
-
-local ToggleEspsea = Tabs.Fruit:AddToggle("ToggleEspsea", {Title = "ESP Sea Beast", Default = false })
-
-ToggleEspafd:OnChanged(function(Value)
-    SeaESP = Value
-end)
-Options.ToggleEspsea:SetValue(false)
-
-
-
-local ToggleEspnpc = Tabs.Fruit:AddToggle("ToggleEspnpc", {Title = "ESP NPC", Default = false })
-
-ToggleEspafd:OnChanged(function(Value)
-    NpcESP = Value
-end)
-Options.ToggleEspnpc:SetValue(false)
-
-
-
-
-local ToggleEspaura = Tabs.Fruit:AddToggle("ToggleEspaura", {Title = "ESP Master of Enhancement", Default = false })
-
-ToggleEspaura:OnChanged(function(Value)
-    AuraESP = Value
-	UpdateAuraESP()
-end)
-Options.ToggleEspaura:SetValue(false)
-
-
-local ToggleEsplsd = Tabs.Fruit:AddToggle("ToggleEsplsd", {Title = "ESP Legendary Sword Dealer", Default = false })
-
-ToggleEsplsd:OnChanged(function(Value)
-    LADESP = Value
-	UpdateLSDESP() 
-end)
-Options.ToggleEsplsd:SetValue(false)
-
-local ToggleEspmgear = Tabs.Fruit:AddToggle("ToggleEspmgear", {Title = "ESP Gear", Default = false })
-
-ToggleEspmgear:OnChanged(function(Value)
-    GearESP = Value
-    	UpdateGearESP() 
-end)
-Options.ToggleEspmgear:SetValue(false)
-
-
-
-
 spawn(function()
     while wait(1) do
         if FlowerESP then
@@ -5160,12 +4925,6 @@ spawn(function()
 		if AfdESP then
 		UpdateAfdESP()
 		end
-if AuraESP then
-UpdateAuraESP()
-end
-if GearESP then
-UpdateGearESP()
-end
     end
 end)
 

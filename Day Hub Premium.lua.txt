@@ -1925,7 +1925,7 @@ for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
 end
 end
 
-function UpdateGeaESP() 
+function UpdateGearESP() 
 for i,v in pairs(game:GetService("Workspace").Map.MysticIsland:GetChildren()) do 
     pcall(function()
         if GearESP then 
@@ -5118,7 +5118,6 @@ end)
 Options.ToggleEspaura:SetValue(false)
 
 
-if Second_Sea then
 local ToggleEsplsd = Tabs.Fruit:AddToggle("ToggleEsplsd", {Title = "ESP Legendary Sword Dealer", Default = false })
 
 ToggleEsplsd:OnChanged(function(Value)
@@ -5126,15 +5125,14 @@ ToggleEsplsd:OnChanged(function(Value)
 	UpdateLSDESP() 
 end)
 Options.ToggleEsplsd:SetValue(false)
-end
 
-local ToggleEspgear = Tabs.Fruit:AddToggle("ToggleEspgear", {Title = "ESP Gear", Default = false })
+local ToggleEspmgear = Tabs.Fruit:AddToggle("ToggleEspmgear", {Title = "ESP Gear", Default = false })
 
-ToggleEspgear:OnChanged(function(Value)
+ToggleEspmgear:OnChanged(function(Value)
     GearESP = Value
-	UpdateGeaESP() 
+    	UpdateGearESP() 
 end)
-Options.ToggleEspgear:SetValue(false)
+Options.ToggleEspmgear:SetValue(false)
 
 
 
@@ -5166,7 +5164,7 @@ if AuraESP then
 UpdateAuraESP()
 end
 if GearESP then
-UpdateGeaESP()
+UpdateGearESP()
 end
     end
 end)

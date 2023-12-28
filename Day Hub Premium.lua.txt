@@ -4411,6 +4411,26 @@ ToggleQuanSat:OnChanged(function(Value)
 end)
 Options.ToggleQuanSat:SetValue(false)
 
+local LocalPlayer = Tabs.Player:AddSection("Local Player")
+local Walkwater = Tabs.Player:AddToggle("ToggleWalkwater", {Title = "Walk On Water", Default = false })
+
+ToggleWalkwater:OnChanged(function(Value)
+    _G.WalkWater = Value
+    spawn(function()
+
+			while task.wait() do
+				pcall(function()
+					if _G.WalkWater then
+						game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,112,1000)
+					else
+						game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,80,1000)
+					end
+				end)
+			end
+		end)
+
+end)
+Options.ToggleWalkwater:SetValue(false)
 -----------------------------------------------------------------------------------------------------------------------------------------------
 --Teleport
 local Teleport = Tabs.Teleport:AddSection("Teleport World")

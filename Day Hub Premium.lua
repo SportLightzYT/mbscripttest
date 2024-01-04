@@ -4527,22 +4527,6 @@ end)
 Options.ToggleQuanSat:SetValue(false)
 
 local LocalPlayer = Tabs.Player:AddSection("Local Player")
-local LocalPlayer = Tabs.Player:AddToggle("Togglewaterwalk", {Title = "Walk On Water", Default = false })
-Togglewaterwalk:OnChanged(function(Value)
-    _G.WalkWater = value
-end)
-Options.Togglewaterwalk:SetValue(false)
-    spawn(function()
-			while task.wait() do
-				pcall(function()
-					if _G.WalkWater then
-						game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,112,1000)
-					else
-						game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,80,1000)
-					end
-				end)
-			end
-		end)
 local LocalPlayer = Tabs.Player:AddToggle("Toggleautov4", {Title = "Auto Turn On Racev4", Default = false })
 Toggleautov4:OnChanged(function(Value)
     _G.AutoTurnV4 = value

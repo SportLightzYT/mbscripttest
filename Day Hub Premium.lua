@@ -4527,11 +4527,11 @@ end)
 Options.ToggleQuanSat:SetValue(false)
 
 local LocalPlayer = Tabs.Player:AddSection("Local Player")
-local LocalPlayer = Tabs.Player:AddToggle("Togglewalkwater", {Title = "Walk On Water", Default = false })
-Togglewalkwater:OnChanged(function(Value)
+local LocalPlayer = Tabs.Player:AddToggle("Togglewaterwalk", {Title = "Walk On Water", Default = false })
+Togglewaterwalk:OnChanged(function(Value)
     _G.WalkWater = value
 end)
-Options.Togglewalkwater:SetValue(false)
+Options.Togglewaterwalk:SetValue(false)
     spawn(function()
 			while task.wait() do
 				pcall(function()

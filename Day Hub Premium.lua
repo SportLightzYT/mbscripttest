@@ -4526,23 +4526,6 @@ ToggleQuanSat:OnChanged(function(Value)
 end)
 Options.ToggleQuanSat:SetValue(false)
 
-local LocalPlayer = Tabs.Player:AddSection("Local Player")
-local LocalPlayer = Tabs.Player:AddToggle("Toggleautov4", {Title = "Auto Turn On Racev4", Default = false })
-Toggleautov4:OnChanged(function(Value)
-    _G.AutoTurnV4 = value
-end)
-Options.Toggleautov4:SetValue(false)
-spawn(function()
-    while wait() do
-		pcall(function()
-			if _G.AutoTurnV4 then
-				game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
-				wait(0.1)
-                game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
-			end
-		end)
-    end
-end)
 -----------------------------------------------------------------------------------------------------------------------------------------------
 --Teleport
 local Teleport = Tabs.Teleport:AddSection("Teleport World")

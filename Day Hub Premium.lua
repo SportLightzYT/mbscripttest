@@ -2393,8 +2393,8 @@ end)
 
 if DisplayButton.Visible == true then
     DisplayButton.MouseButton1Click:Connect(function()
-        game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-        game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+        game:GetService("VirtualInputManager"):SendKeyEvent(true,End,false,game)
+        game:GetService("VirtualInputManager"):SendKeyEvent(false,End,false,game)
     end)
 end
 --------------------------------------------------------------------------------------------------------------------------------------------

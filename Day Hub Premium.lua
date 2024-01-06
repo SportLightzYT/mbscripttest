@@ -2242,7 +2242,6 @@ end)
     end
 end
 ---Bypass Teleport
---made Fai Fao Hub
 function BTP(P)
 	repeat wait(0.5)
 		game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
@@ -2372,6 +2371,32 @@ local function YTZCAJC_fake_script()
 	end)
 end
 coroutine.wrap(YTZCAJC_fake_script)()
+
+-------------------------------------
+local DisplayButton = game:GetService("Players").LocalPlayer.PlayerGui.Main.Settings.DisplayButton
+local SettingsButton = game:GetService("Players").LocalPlayer.PlayerGui.Main.Settings
+
+DisplayButton.TextLabel.Text = "Day Hub"
+DisplayButton.Notify.Text = "Enable or Disable UI script"
+DisplayButton.Visible = false
+Toggle = true
+
+SettingsButton.MouseButton1Click:Connect(function()
+    if Toggle then
+        Toggle = false
+        DisplayButton.Visible = true
+    else
+        Toggle = true
+        DisplayButton.Visible = false
+    end
+end)
+
+if DisplayButton.Visible == true then
+    DisplayButton.MouseButton1Click:Connect(function()
+        game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+        game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+    end)
+end
 --------------------------------------------------------------------------------------------------------------------------------------------
 -- Hehe
 --------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,3 +1,50 @@
+local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/1st-Mars/Misc/main/O")))()
+
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+ScreenGui.Name = ""
+ScreenGui.Parent = game.CoreGui or game.Players.LocalPlayer.PlayerGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+ImageButton.Size = UDim2.new(0, 50, 0, 50)
+ImageButton.Draggable = true
+ImageButton.Image = "https://www.roblox.com/asset/?id=15446676864"
+UICorner.Parent = ImageButton
+ImageButton.MouseButton1Down:connect(function()
+       game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+       game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+end)
+
+local Window =
+    OrionLib:MakeWindow(
+    {
+        Name = "Edward Newgate Hub",
+        HidePremium = false,
+        IntroText = "EdwardNewgateHub Library",
+        SaveConfig = true,
+        ConfigFolder = "Edward Newgate Hub"
+    }
+)
+
+OrionLib:MakeNotification(
+    {
+        Name = "Edward Newgate Hub",
+        Content = "Choose Teams",
+        Time = 7
+    }
+)
+
+OrionLib:MakeNotification(
+    {
+        Name = "Edward Newgate Hub",
+        Content = "Please Wait loading script,do not enable any function",
+        Time = 5
+    }
+)
 if game.PlaceId == 2753915549 then
     World1 = true
 elseif game.PlaceId == 4442272183 then
@@ -4225,55 +4272,6 @@ spawn(
         wait(.36)
     end
 )
-
-local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/1st-Mars/Misc/main/O")))()
-
-local ScreenGui = Instance.new("ScreenGui")
-local ImageButton = Instance.new("ImageButton")
-local UICorner = Instance.new("UICorner")
-ScreenGui.Name = ""
-ScreenGui.Parent = game.CoreGui or game.Players.LocalPlayer.PlayerGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ImageButton.Parent = ScreenGui
-ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-ImageButton.Size = UDim2.new(0, 50, 0, 50)
-ImageButton.Draggable = true
-ImageButton.Image = "https://www.roblox.com/asset/?id=15446676864"
-UICorner.Parent = ImageButton
-ImageButton.MouseButton1Down:connect(function()
-       game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-       game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
-end)
-
-local Window =
-    OrionLib:MakeWindow(
-    {
-        Name = "Edward Newgate Hub",
-        HidePremium = false,
-        IntroText = "EdwardNewgateHub Library",
-        SaveConfig = true,
-        ConfigFolder = "Edward Newgate Hub"
-    }
-)
-
-OrionLib:MakeNotification(
-    {
-        Name = "Edward Newgate Hub",
-        Content = "Choose Teams",
-        Time = 7
-    }
-)
-
-OrionLib:MakeNotification(
-    {
-        Name = "Edward Newgate Hub",
-        Content = "Please Wait loading script,do not enable any function",
-        Time = 5
-    }
-)
-
 -------------Tab-----------------------
 
 local W =
